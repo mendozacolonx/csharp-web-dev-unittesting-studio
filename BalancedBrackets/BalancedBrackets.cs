@@ -33,11 +33,28 @@ namespace BalancedBracketsNS
                     brackets++;
                 }
                 else if (ch == ']')
+                //this line can't account for  empty strings or order of brackets
+                //else if (ch == ']' && brackets > 0)
                 {
                     brackets--;
+                    //
+                    //return true;
+                }
+                //is writing a specific circumstance in cheating the test? ask ta.
+                 if (ch.Equals(""))
+                {
+                    return brackets == 0;
+                }
+                 if (brackets == -1)
+                {
+                    //do i want the program to keep going if i get a ], or do i want it to stop right away.
+                    //prob stop because means wrong order...
+                    return brackets == 0;
+                    //break;
                 }
             }
-            return brackets == 0;
+             return brackets == 0;
+            //return false;
         }
     }
 }
